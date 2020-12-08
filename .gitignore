@@ -1,0 +1,11 @@
+cmake-build-debug/
+CMakeLists.txt
+utils/main.c
+utils/session_setup.sh
+utils/space_clean.sh
+ft_server/
+utils/
+clean.sh
+re.sh
+dashboard.sh
+z
