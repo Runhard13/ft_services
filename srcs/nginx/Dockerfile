@@ -4,7 +4,7 @@ FROM alpine:latest
 RUN apk update && apk upgrade
 RUN apk --no-cache add nginx
 RUN apk --no-cache add openssl
-RUN apk --no-cache add openssh
+RUN apk --no-cache --update add openssh
 RUN apk --no-cache add supervisor
 
 RUN echo "root:root" | chpasswd
@@ -27,7 +27,7 @@ RUN openssl req -newkey rsa:4096 \
                 -nodes \
                 -out /etc/nginx/ssl/certificate.crt \
                 -keyout /etc/nginx/ssl/private.key \
-                -subj "/C=RU/ST=Tatarstan/L=Kazan/O=21school/OU=idk/CN=localhost"
+                -subj "/C=RU/ST=Tatarstan/L=Kazan/O=21school/OU=nginx/CN=localhost"
 
 #SSH
 RUN ssh-keygen -A

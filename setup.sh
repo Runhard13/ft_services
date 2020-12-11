@@ -13,9 +13,11 @@ minikube addons enable dashboard
 
 #images
 docker build srcs/nginx/ -t nginx_image
+docker build srcs/ftps/ -t ftps_image
 
 
 
 #apply config
 kubectl apply -f srcs/metallb.yaml
 kubectl apply -f srcs/nginx/nginx.yaml
+kubectl apply -f srcs/ftps/ftps.yaml
