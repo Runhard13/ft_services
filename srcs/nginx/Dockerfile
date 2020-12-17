@@ -2,10 +2,7 @@ FROM alpine:latest
 
 #install all
 RUN apk update && apk upgrade
-RUN apk --no-cache add nginx
-RUN apk --no-cache add openssl
-RUN apk --no-cache --update add openssh
-RUN apk --no-cache add supervisor
+RUN apk --no-cache add nginx openssl openssh supervisor
 
 RUN echo "root:root" | chpasswd
 
@@ -15,8 +12,6 @@ RUN mkdir /www
 RUN mkdir -p /run/nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY index.html www/index.html
-
-
 
 #SSL
 RUN mkdir -p /etc/nginx/ssl

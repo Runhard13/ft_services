@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN	apk update && apk upgrade
-RUN	apk add mariadb mariadb-common mariadb-client openrc
+RUN apk --no-cache add mariadb mariadb-common mariadb-client openrc
 
 COPY init.sh .
 RUN	chmod +x init.sh
