@@ -34,6 +34,7 @@ RUN ssh-keygen -A
 
 #supervisord
 COPY supervisord.conf /etc/supervisord.conf
+RUN	chmod +rw /etc/supervisord.conf
 
 EXPOSE 80 443 22
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
