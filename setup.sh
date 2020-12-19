@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-#minikube start --vm-driver=virtualbox --disk-size="8000mb" --memory="3072mb"
+minikube start --vm-driver=virtualbox --disk-size="8000mb" --memory="3072mb"
 
 #setting docker env variable
 minikube docker-env

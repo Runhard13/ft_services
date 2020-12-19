@@ -1,16 +1,23 @@
 FROM alpine:latest
 
 RUN	apk update && apk upgrade
-RUN apk add --no-cache supervisor nginx
+RUN apk add --no-cache supervisor nginx openrc wget
+RUN apk add --no-cache php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl
 
 RUN	adduser -D -g 'www' www
+RUN echo "www:www" | chpasswd
 RUN	mkdir /www && chown -R www:www /var/lib/nginx && chown -R www:www /www
+RUN mkdir /run/nginx && chmod 755 /run/nginx
+
 
 #configure wordpress
 RUN wget https://wordpress.org/latest.tar.gz
-RUN tar -xvzf latest.tar.gz && rm -rf latest.tar.gz
-COPY wp-config.php /www/wordpress
+RUN tar -xvzf latest.tar.gz && rm latest.tar.gz
+RUN mv wordpress /www/
+COPY wp-config.php www/wordpress/
 
-RUN mkdir -p /run/nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html www/index.html
+COPY supervisord.conf /etc/supervisord.conf
+
+EXPOSE 5050
+CMD /usr/bin/supervisord -c /etc/supervisord.conf

@@ -12,11 +12,11 @@
 
 
 /* MySQL settings */
-define( 'DB_NAME',     'database_name_here' );
-define( 'DB_USER',     'username_here' );
-define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_NAME',     'wordpress' );
+define( 'DB_USER',     'user' );
+define( 'DB_PASSWORD', 'password' );
 define( 'DB_HOST',     'mysql-service:3306 );
-define( 'DB_CHARSET',  'utf8mb4' );
+define( 'DB_CHARSET',  'utf8' );
 
 
 /* MySQL database table prefix. */
@@ -37,7 +37,7 @@ define('NONCE_SALT',       '_MD2-QT;GM(sb+[~l-sanEqn0*KZ~x,Tumd+I9Cd5yq/VL(b(2lL
 
 /* Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+	define( 'ABSPATH', __DIR__ . '/' );
 
 /* Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
