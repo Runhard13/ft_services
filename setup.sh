@@ -5,6 +5,8 @@ minikube start --vm-driver=virtualbox --disk-size="8000mb" --memory="3072mb"
 #setting docker env variable
 minikube docker-env
 eval $(minikube -p minikube docker-env)
+docker pull metallb/speaker:v0.8.2
+docker pull metallb/controller:v0.8.2
 
 #enable addons
 minikube addons enable metallb

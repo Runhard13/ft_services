@@ -4,7 +4,7 @@ RUN	apk update && apk upgrade
 RUN apk --no-cache add mariadb mariadb-common mariadb-client openrc
 
 RUN	mkdir "/run/mysqld" && chown -R mysql /run/mysqld
-COPY my.cnf /etc/
+COPY mariadb-server.cnf /etc/my.cnf.d/
 COPY init.sh .
 RUN	chmod +x init.sh
 

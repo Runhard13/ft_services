@@ -2,12 +2,12 @@ FROM alpine:latest
 
 RUN	apk update && apk upgrade
 RUN apk add --no-cache supervisor nginx openrc wget
-RUN apk add --no-cache php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl
+RUN apk add --no-cache php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl php7-json
 
 RUN	adduser -D -g 'www' www
 RUN echo "www:www" | chpasswd
-RUN	mkdir /www && chown -R www:www /var/lib/nginx && chown -R www:www /www
-RUN mkdir /run/nginx && chmod 755 /run/nginx
+RUN	mkdir /www && chown -R www:www /var/lib/nginx && chown -R www:www /www && chmod 755 /var/lib/nginx
+RUN mkdir /run/nginx && chmod 755 /run/nginx && chown -R www:www /run/nginx
 
 
 #configure wordpress

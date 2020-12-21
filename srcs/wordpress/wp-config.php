@@ -15,9 +15,8 @@
 define( 'DB_NAME',     'wordpress' );
 define( 'DB_USER',     'user' );
 define( 'DB_PASSWORD', 'password' );
-define( 'DB_HOST',     'mysql-service:3306 );
+define( 'DB_HOST',     'mysql-service:3306' );
 define( 'DB_CHARSET',  'utf8' );
-
 
 /* MySQL database table prefix. */
 $table_prefix = 'wp_';
