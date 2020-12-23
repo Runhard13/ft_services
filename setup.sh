@@ -18,6 +18,7 @@ docker build srcs/nginx/ -t nginx_image
 docker build srcs/ftps/ -t ftps_image
 docker build srcs/mysql/ -t mysql_image
 docker build srcs/wordpress/ -t wordpress_image
+docker build srcs/phpmyadmin/ -t pma_image
 
 
 
@@ -27,5 +28,6 @@ kubectl apply -f srcs/nginx/nginx.yaml
 kubectl apply -f srcs/ftps/ftps.yaml
 kubectl apply -f srcs/mysql/mysql.yaml
 kubectl apply -f srcs/wordpress/wordpress.yaml
+kubectl apply -f srcs/phpmyadmin/pma.yaml
 
 minikube dashboard
