@@ -4,12 +4,14 @@ FROM alpine:latest
 RUN apk update && apk upgrade
 RUN apk --no-cache add nginx openssl openssh supervisor
 
-RUN echo "root:root" | chpasswd
+RUN	adduser -D -g 'www' www
+RUN	echo "www:www" | chpasswd
 
-RUN mkdir /www
+RUN	mkdir /www && chown -R www:www /www
+RUN	chown -R www:www /var/lib/nginx
 
 #Nginx
-RUN mkdir -p /run/nginx
+RUN mkdir -p /run/nginx && chown -R nginx:nginx /run/nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY index.html www/index.html
 

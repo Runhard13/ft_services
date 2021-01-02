@@ -5,6 +5,7 @@ RUN apk --no-cache add mariadb mariadb-common mariadb-client openrc
 
 RUN	mkdir "/run/mysqld" && chown -R mysql /run/mysqld
 COPY mariadb-server.cnf /etc/my.cnf.d/
+COPY wordpress.sql .
 COPY init.sh .
 RUN	chmod +x init.sh
 
