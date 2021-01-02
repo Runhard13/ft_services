@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 minikube start --vm-driver=virtualbox --disk-size="8000mb" --memory="3072mb"
 
@@ -20,6 +20,8 @@ docker build srcs/mysql/ -t mysql_image
 docker build srcs/wordpress/ -t wordpress_image
 docker build srcs/phpmyadmin/ -t pma_image
 docker build srcs/grafana/ -t grafana_image
+docker build srcs/influxdb/ -t influxdb_image
+docker build srcs/telegraf -t telegraf_image
 
 
 
@@ -31,5 +33,7 @@ kubectl apply -f srcs/mysql/mysql.yaml
 kubectl apply -f srcs/wordpress/wordpress.yaml
 kubectl apply -f srcs/phpmyadmin/pma.yaml
 kubectl apply -f srcs/grafana/grafana.yaml
+kubectl apply -f srcs/influxdb/influxdb.yaml
+kubectl apply -f srcs/telegraf/telegraf.yaml
 
 minikube dashboard

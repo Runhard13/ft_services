@@ -12,6 +12,7 @@ RUN mkdir /run/nginx && chown -R www:www /run/nginx/
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-languages.tar.gz
 RUN tar -xvzf phpMyAdmin-5.0.4-all-languages.tar.gz && rm phpMyAdmin-5.0.4-all-languages.tar.gz
 RUN mv phpMyAdmin-5.0.4-all-languages /www/pma
+RUN mkdir /www/pma/tmp && chmod 777 /www/pma/tmp
 COPY config.inc.php /www/pma/
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf

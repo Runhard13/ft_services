@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="grafana (1)" uuid="abb74a70-5248-45b0-9c4a-502517beafc7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/srcs/grafana/grafana (1).db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="grafana" uuid="e42b6965-f8c4-4015-8ee1-b339370ad623">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/srcs/grafana/grafana</jdbc-url>
+    </data-source>
+  </component>
+</project>
