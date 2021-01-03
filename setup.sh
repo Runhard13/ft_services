@@ -37,3 +37,17 @@ kubectl apply -f srcs/influxdb/influxdb.yaml
 kubectl apply -f srcs/telegraf/telegraf.yaml
 
 minikube dashboard
+
+
+# curl -I http://192.168.99.111
+# kubectl exec deploy/ftps -- pkill vsftpd
+# kubectl exec deploy/grafana -- pkill grafana
+# kubectl exec deploy/telegraf -- pkill telegraf
+# kubectl exec deploy/influxdb -- pkill influx
+# kubectl exec deploy/wordpress -- pkill nginx
+# kubectl exec deploy/wordpress -- pkill php-fpm7
+# kubectl exec deploy/phpmyadmin -- pkill nginx
+# kubectl exec deploy/phpmyadmin -- pkill php-fpm7
+# kubectl exec deploy/mysql -- pkill /usr/bin/mysqld
+# kubectl exec deploy/nginx -- pkill nginx
+# kubectl exec deploy/nginx -- pkill sshd

@@ -17,6 +17,8 @@ define( 'DB_USER',     'user' );
 define( 'DB_PASSWORD', 'password' );
 define( 'DB_HOST',     'mysql-service:3306' );
 define( 'DB_CHARSET',  'utf8' );
+define('WP_HOME', 'http://192.168.99.111:5050/');
+define('WP_SITEURL', 'http://192.168.99.111:5050/');
 
 /* MySQL database table prefix. */
 $table_prefix = 'wp_';

@@ -13,7 +13,8 @@ declare(strict_types=1);
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = 'ethethhtrekrlgjerlgjeglrjelrgjelrkgjelrkhmlerherherheherh45j4j4j545j45j4jehrth4thv'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = '33e3r23r23r23r23r23r2r23rvgtreqd'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['PmaAbsoluteUri'] = 'phpmyadmin-service:5000';
 
 /**
  * Servers configuration
@@ -24,6 +25,7 @@ $i = 0;
  * First server
  */
 $i++;
+
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
